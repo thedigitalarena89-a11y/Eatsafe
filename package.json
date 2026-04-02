@@ -1,6 +1,9 @@
 {
   "name": "eatsafe-root",
   "type": "module",
+  "engines": {
+    "node": "20.x"
+  },
   "private": true,
   "workspaces": [
     "client",

@@ -6,7 +6,7 @@ export async function callNimChat({ imageBuffer, prompt }) {
   const endpoint = process.env.NIM_API_BASE || DEFAULT_BASE;
 
   if (!apiKey) {
-    throw new Error('NIM_API_KEY is not set in Vercel/Environment');
+    throw new Error('NIM_API_KEY is missing. Please add it to your Vercel Project Settings > Environment Variables.');
   }
 
   const base64 = imageBuffer.toString('base64');

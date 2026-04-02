@@ -97,11 +97,13 @@ export default function ScanPage() {
     formData.append('image', imageFile);
     try {
       const response = await fetch(`${API_BASE_URL}/api/process`, { method: 'POST', body: formData });
-      if (!response.ok) throw new Error('Processing failed');
-      const data = await response.json();
+      const data = await response.json().catch(() => ({}));
+      if (!response.ok) {
+        throw new Error(data.error || data.details || 'Processing failed');
+      }
       navigate('/result', { state: { result: data, imageUrl } });
     } catch (err) {
-      setError('AI processing failed. Please try again.');
+      setError(`AI Error: ${err.message}`);
     } finally {
       setProcessing(false);
     }
