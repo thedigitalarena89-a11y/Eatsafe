@@ -44,9 +44,10 @@ export default function AuthPage() {
 
   const handleGoogle = async () => {
     setError('');
+    const redirectTo = import.meta.env.VITE_REDIRECT_URL || window.location.origin;
     const { error: oauthError } = await supabase.auth.signInWithOAuth({
       provider: 'google',
-      options: { redirectTo: window.location.origin }
+      options: { redirectTo }
     });
     if (oauthError) setError(oauthError.message);
   };
