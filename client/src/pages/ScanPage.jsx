@@ -103,7 +103,7 @@ export default function ScanPage() {
       }
       navigate('/result', { state: { result: data, imageUrl } });
     } catch (err) {
-      setError(`AI Error: ${err.message}`);
+      setError('Analysis failed. Please check your connection and try again.');
     } finally {
       setProcessing(false);
     }
