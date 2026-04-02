@@ -1,5 +1,6 @@
 {
   "name": "eatsafe-root",
+  "type": "module",
   "private": true,
   "workspaces": [
     "client",
