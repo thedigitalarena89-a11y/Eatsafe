@@ -1,0 +1,450 @@
+/* =============================================
+   THE LIVING LEDGER — Design System
+   Single source of truth for all styling.
+   Ref: DESIGN.md
+   ============================================= */
+
+/* --- 1. Design Tokens --- */
+
+:root {
+  /* Surface Hierarchy (Tonal Layering) */
+  --surface:                   #f9f9fe;
+  --surface-container-low:     #f3f3f8;
+  --surface-container-lowest:  #ffffff;
+  --surface-container-high:    #e8e8ed;
+  --surface-container-highest: #e2e2e7;
+
+  /* Primary (Living Greens) */
+  --primary:              #006e1a;
+  --primary-container:    #20c93d;
+  --on-primary:           #ffffff;
+  --on-primary-container: #004d0f;
+
+  /* Secondary (Accent Indigo) */
+  --secondary:            #4c4aca;
+  --secondary-container:  #6664e4;
+  --on-secondary:         #ffffff;
+
+  /* Tertiary (Warning / Danger) */
+  --tertiary:             #9c413d;
+  --tertiary-container:   #ff8e86;
+  --on-tertiary:          #ffffff;
+
+  /* Text */
+  --on-background:        #1a1c1f;
+  --on-surface:           #1a1c1f;
+  --on-surface-variant:   #3d4a3c;
+
+  /* Borders — used sparingly via Ghost Border */
+  --outline:              #6d7b6b;
+  --outline-variant:      #bccbb8;
+
+  /* Elevation — Tonal Layering, not dropshadows */
+  --shadow-ambient: 0 8px 24px rgba(26, 28, 31, 0.06);
+  --shadow-fab:     0 8px 24px rgba(0, 110, 26, 0.25);
+
+  /* Typography */
+  --font-headline: 'Manrope', sans-serif;
+  --font-body:     'Inter', sans-serif;
+
+  /* Roundedness */
+  --radius-xl:   1.5rem;   /* 24px — main cards */
+  --radius-lg:   0.75rem;  /* 12px — secondary */
+  --radius-full: 9999px;   /* pills, FABs, chips */
+}
+
+
+/* --- 2. Reset & Base --- */
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--surface);
+  color: var(--on-surface-variant);      /* body text uses variant per DESIGN.md */
+  min-height: 100vh;
+  line-height: 1.6;
+  font-size: 0.875rem;                   /* body-md */
+}
+
+
+/* --- 3. Typography --- */
+
+h1, h2, h3, .font-headline {
+  font-family: var(--font-headline);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--on-surface);              /* headlines use full on-surface */
+}
+
+.text-display-lg  { font-size: 3.5rem; line-height: 1; font-family: var(--font-headline); font-weight: 800; }
+.text-headline-sm { font-size: 1.5rem; font-family: var(--font-headline); font-weight: 800; }
+.text-title-md    { font-size: 1.125rem; font-family: var(--font-body); font-weight: 600; }
+.text-body-md     { font-size: 0.875rem; }
+.text-label-sm    { font-size: 0.6875rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; }
+.text-sm          { font-size: 0.875rem; }
+.text-xs          { font-size: 0.75rem; }
+
+.text-primary             { color: var(--primary); }
+.text-secondary           { color: var(--secondary); }
+.text-on-surface          { color: var(--on-surface); }
+.text-on-surface-variant  { color: var(--on-surface-variant); }
+.text-outline             { color: var(--outline); }
+
+.font-bold { font-weight: 700; }
+.opacity-40 { opacity: 0.4; }
+.opacity-60 { opacity: 0.6; }
+
+
+/* --- 4. Layout --- */
+
+.page {
+  min-height: 100vh;
+  padding: 24px 16px 100px;  /* Spacing 4 on sides for breathing room */
+  max-width: 500px;
+  margin: 0 auto;
+  position: relative;
+}
+
+
+/* --- 5. Components: Cards --- */
+/* DESIGN.md: surface-container-lowest, xl radius, ambient shadow, no borders */
+
+.card {
+  background-color: var(--surface-container-lowest);
+  border-radius: var(--radius-xl);
+  padding: 24px;
+  box-shadow: var(--shadow-ambient);
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.card:active {
+  transform: scale(0.98);
+  background-color: var(--surface-container-high);
+}
+
+
+/* --- 6. Components: Buttons --- */
+
+.btn-primary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 16px 24px;
+  border-radius: var(--radius-full);
+  background: linear-gradient(135deg, var(--primary), var(--primary-container));
+  color: var(--on-primary);
+  font-weight: 700;
+  font-family: var(--font-headline);
+  font-size: 0.875rem;
+  border: none;
+  cursor: pointer;
+  box-shadow: var(--shadow-fab);
+  transition: transform 0.15s ease, opacity 0.15s ease;
+  min-height: 48px;     /* 48px minimum touch target per DESIGN.md */
+}
+
+.btn-primary:active { transform: scale(0.97); }
+.btn-primary:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.btn-outline {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 16px 24px;
+  border-radius: var(--radius-full);
+  background: var(--surface-container-low);
+  border: none;
+  color: var(--on-surface);
+  font-weight: 700;
+  font-family: var(--font-headline);
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+  min-height: 48px;
+}
+
+.btn-outline:active { background-color: var(--surface-container-high); }
+
+
+/* --- 7. Components: FAB --- */
+
+.fab {
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-full);
+  background: linear-gradient(135deg, var(--primary), var(--primary-container));
+  color: var(--on-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-fab);
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  text-decoration: none;
+}
+
+.fab:active { transform: scale(0.92); }
+
+
+/* --- 8. Components: Chips --- */
+/* DESIGN.md: full radius, surface-container-high unselected, primary-container active */
+
+.selection-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 20px;
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  font-weight: 700;
+  font-family: var(--font-body);
+  cursor: pointer;
+  background-color: var(--surface-container-high);
+  color: var(--on-surface-variant);
+  border: none;
+  transition: all 0.2s ease;
+  min-height: 48px;
+}
+
+.selection-chip.active,
+.selection-chip[data-active="true"] {
+  background-color: var(--primary-container);
+  color: var(--on-primary-container);
+}
+
+
+/* --- 9. Components: Form Inputs --- */
+/* DESIGN.md: Float-label, surface-container-low bg, xl radius, no bottom border */
+
+.input-container {
+  background-color: var(--surface-container-low);
+  border-radius: var(--radius-xl);
+  padding: 12px 16px;
+  position: relative;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.input-container:focus-within {
+  background-color: var(--surface-container-lowest);
+  box-shadow: 0 0 0 2px rgba(0, 110, 26, 0.4);     /* Ghost Border of primary @ 40% */
+}
+
+input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--on-surface);
+  font-weight: 500;
+}
+
+input::placeholder {
+  color: var(--outline);
+  opacity: 0.6;
+}
+
+label {
+  display: block;
+  font-size: 0.625rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--outline);
+  margin-left: 16px;
+  margin-bottom: 4px;
+}
+
+
+/* --- 10. Components: Navigation --- */
+
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 8px 24px 24px;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 24px 24px 0 0;
+  /* No border — tonal separation via backdrop blur */
+  z-index: 1000;
+}
+
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: var(--on-surface-variant);
+  opacity: 0.5;
+  padding: 8px 14px;
+  border-radius: var(--radius-full);
+  transition: all 0.2s ease;
+  min-width: 48px;
+  min-height: 48px;
+}
+
+.nav-item.active {
+  opacity: 1;
+  background-color: rgba(0, 110, 26, 0.08);
+  color: var(--primary);
+}
+
+.nav-label {
+  font-size: 9px;
+  font-weight: 700;
+  margin-top: 2px;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+
+/* --- 11. Components: Profile Avatar --- */
+
+.profile-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: var(--surface-container-high);
+  color: var(--on-surface-variant);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 800;
+  font-family: var(--font-headline);
+}
+
+
+/* --- 12. Special Components --- */
+
+.logo-ledger {
+  width: 80px;
+  height: 80px;
+  background-color: var(--primary-container);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bento-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.bento-full {
+  grid-column: span 2;
+}
+
+.glass-hero {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: var(--radius-xl);
+}
+
+.ghost-border {
+  border: 1.5px solid rgba(188, 203, 184, 0.15);
+}
+
+.weight-arc-container {
+  position: relative;
+  width: 220px;
+  height: 120px;
+  margin: 0 auto;
+}
+
+
+/* --- 13. Material Symbols --- */
+
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  vertical-align: middle;
+}
+
+
+/* --- 14. Animations --- */
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: 0.5; }
+}
+
+.animate-spin     { animation: spin 1.5s linear infinite; }
+.animate-fade-in  { animation: fadeInUp 0.5s ease-out both; }
+.animate-pulse    { animation: pulse 2s ease-in-out infinite; }
+
+
+/* --- 15. Utility Classes --- */
+
+.flex           { display: flex; }
+.flex-col       { flex-direction: column; }
+.flex-wrap      { flex-wrap: wrap; }
+.items-center   { align-items: center; }
+.items-start    { align-items: flex-start; }
+.items-baseline { align-items: baseline; }
+.justify-center { justify-content: center; }
+.justify-between { justify-content: space-between; }
+.justify-end    { justify-content: flex-end; }
+.gap-1  { gap: 4px; }
+.gap-2  { gap: 8px; }
+.gap-3  { gap: 12px; }
+.gap-4  { gap: 16px; }
+.gap-6  { gap: 24px; }
+.gap-8  { gap: 32px; }
+.mt-1   { margin-top: 4px; }
+.mt-2   { margin-top: 8px; }
+.mt-4   { margin-top: 16px; }
+.mt-6   { margin-top: 24px; }
+.mb-1   { margin-bottom: 4px; }
+.mb-2   { margin-bottom: 8px; }
+.mb-4   { margin-bottom: 16px; }
+.mb-6   { margin-bottom: 24px; }
+.mb-8   { margin-bottom: 32px; }
+.ml-spacing-10 { margin-left: 40px; }
+.text-center { text-align: center; }
+.hidden { display: none; }
+.w-full { width: 100%; }
+.relative { position: relative; }
+.overflow-hidden { overflow: hidden; }
+
+
+/* --- 16. Scrollbar Hiding (for snap scrolling) --- */
+
+.no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}

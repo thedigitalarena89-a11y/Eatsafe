@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Smart Food Weight Tracker - Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-surface-variant": "#3d4a3c",
+              "secondary": "#4c4aca",
+              "on-error-container": "#93000a",
+              "on-secondary-fixed": "#0c006a",
+              "inverse-primary": "#46e354",
+              "on-error": "#ffffff",
+              "on-tertiary-fixed-variant": "#7e2a27",
+              "tertiary-fixed": "#ffdad7",
+              "secondary-fixed": "#e2dfff",
+              "primary-fixed-dim": "#46e354",
+              "secondary-fixed-dim": "#c2c1ff",
+              "background": "#f9f9fe",
+              "primary": "#006e1a",
+              "on-tertiary-fixed": "#410004",
+              "surface-container-lowest": "#ffffff",
+              "surface-variant": "#e2e2e7",
+              "surface-container-highest": "#e2e2e7",
+              "surface": "#f9f9fe",
+              "secondary-container": "#6664e4",
+              "tertiary-fixed-dim": "#ffb3ad",
+              "on-secondary-fixed-variant": "#3631b4",
+              "on-surface": "#1a1c1f",
+              "on-tertiary": "#ffffff",
+              "surface-tint": "#006e1a",
+              "surface-container": "#ededf2",
+              "on-primary-fixed-variant": "#005311",
+              "inverse-on-surface": "#f0f0f5",
+              "surface-dim": "#d9dade",
+              "on-primary-container": "#004d0f",
+              "surface-bright": "#f9f9fe",
+              "on-secondary-container": "#fffbff",
+              "tertiary": "#9c413d",
+              "error-container": "#ffdad6",
+              "on-background": "#1a1c1f",
+              "tertiary-container": "#ff8e86",
+              "on-tertiary-container": "#772523",
+              "on-secondary": "#ffffff",
+              "on-primary": "#ffffff",
+              "primary-container": "#20c93d",
+              "outline-variant": "#bccbb8",
+              "inverse-surface": "#2e3034",
+              "outline": "#6d7b6b",
+              "surface-container-high": "#e8e8ed",
+              "error": "#ba1a1a",
+              "primary-fixed": "#71ff74",
+              "on-primary-fixed": "#002203",
+              "surface-container-low": "#f3f3f8"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1.5rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        .weight-arc-gradient {
+            background: conic-gradient(from 180deg at 50% 50%, #006e1a 0deg, #20c93d 180deg, #f3f3f8 180deg);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface min-h-screen pb-32">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 w-full z-50 flex items-center justify-between px-6 h-16 bg-gradient-to-b from-[#f9f9fe] to-[#f3f3f8] dark:from-slate-950 dark:to-slate-900">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full overflow-hidden bg-surface-container">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="Close-up portrait of a smiling man with a clean beard and friendly expression in professional soft lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmXBx4fQvTJ-djt3N-K5NqhwwriECQo3zT-CcYbDPNYZ_MuzGJ7zKoTfMS_4Ewq8XQoxUhI4MWDVcg_69Uxpu4EnEaA1BnY2ojeo5es0_bWbmdmtI0bJIy7rfqvw7iT0pquNJD0uH8qxCORPnvloUjPkAz42rX9XC3fWDwaKxnXlXAAUQ1aymhERAW2S68vYwlVHSQ5z0N1S_VlKuDC8Ox45AQ50zAY-9n7r0syRSA6osW3sxCmwCxNlSeW2isLH22Fq3cXXEXm2Kj"/>
+</div>
+<span class="font-manrope font-black text-green-700 dark:text-green-400 tracking-tight text-xl">Smart Food Weight Tracker</span>
+</div>
+<button class="text-green-600 dark:text-green-400 hover:opacity-80 transition-opacity active:scale-95 duration-200">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+</header>
+<main class="pt-24 px-6 max-w-2xl mx-auto">
+<!-- Greeting Section -->
+<section class="mb-8 ml-2">
+<h2 class="font-headline font-bold text-on-surface-variant text-sm tracking-wider uppercase opacity-60">Welcome back</h2>
+<h1 class="font-headline font-extrabold text-on-surface text-4xl mt-1">Hello, Alex!</h1>
+</section>
+<!-- Bento Grid Layout for Dashboard Cards -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<!-- Card 1: Today's Total Weight (Featured Large) -->
+<div class="md:col-span-2 bg-surface-container-lowest rounded-2xl p-8 shadow-[0_8px_24px_rgba(26,28,31,0.04)] relative overflow-hidden group">
+<div class="relative z-10">
+<p class="font-label text-on-surface-variant font-medium text-sm mb-2">Today's total weight</p>
+<div class="flex items-baseline gap-2">
+<span class="font-headline font-extrabold text-on-surface text-6xl tracking-tighter">2.4</span>
+<span class="font-headline font-bold text-primary text-2xl">kg</span>
+</div>
+<div class="mt-6 flex items-center gap-2">
+<div class="h-1.5 flex-1 bg-surface-container-low rounded-full overflow-hidden">
+<div class="h-full bg-gradient-to-r from-primary to-primary-container w-[65%] rounded-full"></div>
+</div>
+<span class="font-label text-[10px] font-bold text-on-surface-variant">65% of Goal</span>
+</div>
+</div>
+<!-- Abstract visual element -->
+<div class="absolute -right-8 -top-8 w-48 h-48 bg-primary/5 rounded-full blur-3xl group-hover:bg-primary/10 transition-colors"></div>
+</div>
+<!-- Card 2: Last Scanned Item -->
+<div class="bg-surface-container-lowest rounded-2xl p-6 shadow-[0_8px_24px_rgba(26,28,31,0.04)] flex flex-col justify-between min-h-[160px]">
+<div>
+<div class="flex justify-between items-start mb-4">
+<span class="p-2 bg-secondary/10 text-secondary rounded-xl">
+<span class="material-symbols-outlined">barcode_scanner</span>
+</span>
+<span class="font-label text-[10px] text-on-surface-variant opacity-60">12:45 PM</span>
+</div>
+<p class="font-label text-on-surface-variant text-xs mb-1">Last scanned</p>
+<h3 class="font-headline font-bold text-on-surface text-lg leading-tight">Chicken Breast</h3>
+</div>
+<div class="flex items-center gap-2 mt-4 text-primary font-bold">
+<span class="material-symbols-outlined text-sm">scale</span>
+<span class="text-sm font-headline">200g</span>
+</div>
+</div>
+<!-- Card 3: Top Food Item -->
+<div class="bg-surface-container-lowest rounded-2xl p-6 shadow-[0_8px_24px_rgba(26,28,31,0.04)] flex flex-col justify-between min-h-[160px]">
+<div>
+<div class="flex justify-between items-start mb-4">
+<span class="p-2 bg-primary/10 text-primary rounded-xl">
+<span class="material-symbols-outlined">star</span>
+</span>
+<span class="font-label text-[10px] text-on-surface-variant opacity-60">This week</span>
+</div>
+<p class="font-label text-on-surface-variant text-xs mb-1">Top food item</p>
+<h3 class="font-headline font-bold text-on-surface text-lg leading-tight">Garden Salad</h3>
+</div>
+<div class="flex items-center gap-2 mt-4 text-secondary font-bold">
+<span class="material-symbols-outlined text-sm">trending_up</span>
+<span class="text-sm font-headline">8 entries</span>
+</div>
+</div>
+<!-- Visual Insight Card (Extra) -->
+<div class="md:col-span-2 bg-secondary-container text-on-secondary-container rounded-2xl p-6 relative overflow-hidden">
+<div class="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-4">
+<div>
+<h4 class="font-headline font-bold text-xl mb-1">Weekly Consistency</h4>
+<p class="font-body text-sm opacity-90 max-w-xs">You've reached your weight targets 5 days this week. Keep it up!</p>
+</div>
+<div class="flex -space-x-2">
+<div class="w-10 h-10 rounded-full border-2 border-secondary-container bg-surface flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<div class="w-10 h-10 rounded-full border-2 border-secondary-container bg-surface flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<div class="w-10 h-10 rounded-full border-2 border-secondary-container bg-surface flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<div class="w-10 h-10 rounded-full border-2 border-secondary-container bg-surface-container flex items-center justify-center text-on-surface-variant/30">
+<span class="material-symbols-outlined text-sm">pending</span>
+</div>
+</div>
+</div>
+<div class="absolute right-0 bottom-0 opacity-10">
+<span class="material-symbols-outlined text-[120px]">insights</span>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-4 pt-2 bg-white/70 dark:bg-slate-900/70 backdrop-blur-xl rounded-t-[1.5rem] shadow-[0_-8px_24px_rgba(26,28,31,0.06)]">
+<!-- Home (Active) -->
+<a class="flex flex-col items-center justify-center bg-green-100 dark:bg-green-900/40 text-green-800 dark:text-green-200 rounded-full py-1 px-4 transition-transform active:scale-95" href="#">
+<span class="material-symbols-outlined">grid_view</span>
+<span class="font-inter text-[10px] font-medium tracking-wide">Home</span>
+</a>
+<!-- History -->
+<a class="flex flex-col items-center justify-center text-[#3d4a3c] dark:text-slate-400 opacity-70 hover:bg-green-50 dark:hover:bg-slate-800 transition-colors py-1 px-4 rounded-full" href="#">
+<span class="material-symbols-outlined">history</span>
+<span class="font-inter text-[10px] font-medium tracking-wide">History</span>
+</a>
+<!-- Center FAB (Scan) -->
+<div class="relative -top-6">
+<button class="bg-gradient-to-br from-[#006e1a] to-[#20c93d] text-white w-16 h-16 rounded-full shadow-lg flex items-center justify-center transform scale-110 active:scale-100 transition-transform shadow-[0_8px_24px_rgba(0,110,26,0.3)]">
+<span class="material-symbols-outlined text-3xl">add_circle</span>
+</button>
+<span class="absolute -bottom-8 left-1/2 -translate-x-1/2 font-inter text-[10px] font-bold text-primary">Scan</span>
+</div>
+<!-- Insights -->
+<a class="flex flex-col items-center justify-center text-[#3d4a3c] dark:text-slate-400 opacity-70 hover:bg-green-50 dark:hover:bg-slate-800 transition-colors py-1 px-4 rounded-full" href="#">
+<span class="material-symbols-outlined">analytics</span>
+<span class="font-inter text-[10px] font-medium tracking-wide">Insights</span>
+</a>
+<!-- Profile -->
+<a class="flex flex-col items-center justify-center text-[#3d4a3c] dark:text-slate-400 opacity-70 hover:bg-green-50 dark:hover:bg-slate-800 transition-colors py-1 px-4 rounded-full" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-inter text-[10px] font-medium tracking-wide">Profile</span>
+</a>
+</nav>
+</body></html>

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Smart Food Weight Tracker - History</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-surface-variant": "#3d4a3c",
+              "secondary": "#4c4aca",
+              "on-error-container": "#93000a",
+              "on-secondary-fixed": "#0c006a",
+              "inverse-primary": "#46e354",
+              "on-error": "#ffffff",
+              "on-tertiary-fixed-variant": "#7e2a27",
+              "tertiary-fixed": "#ffdad7",
+              "secondary-fixed": "#e2dfff",
+              "primary-fixed-dim": "#46e354",
+              "secondary-fixed-dim": "#c2c1ff",
+              "background": "#f9f9fe",
+              "primary": "#006e1a",
+              "on-tertiary-fixed": "#410004",
+              "surface-container-lowest": "#ffffff",
+              "surface-variant": "#e2e2e7",
+              "surface-container-highest": "#e2e2e7",
+              "surface": "#f9f9fe",
+              "secondary-container": "#6664e4",
+              "tertiary-fixed-dim": "#ffb3ad",
+              "on-secondary-fixed-variant": "#3631b4",
+              "on-surface": "#1a1c1f",
+              "on-tertiary": "#ffffff",
+              "surface-tint": "#006e1a",
+              "surface-container": "#ededf2",
+              "on-primary-fixed-variant": "#005311",
+              "inverse-on-surface": "#f0f0f5",
+              "surface-dim": "#d9dade",
+              "on-primary-container": "#004d0f",
+              "surface-bright": "#f9f9fe",
+              "on-secondary-container": "#fffbff",
+              "tertiary": "#9c413d",
+              "error-container": "#ffdad6",
+              "on-background": "#1a1c1f",
+              "tertiary-container": "#ff8e86",
+              "on-tertiary-container": "#772523",
+              "on-secondary": "#ffffff",
+              "on-primary": "#ffffff",
+              "primary-container": "#20c93d",
+              "outline-variant": "#bccbb8",
+              "inverse-surface": "#2e3034",
+              "outline": "#6d7b6b",
+              "surface-container-high": "#e8e8ed",
+              "error": "#ba1a1a",
+              "primary-fixed": "#71ff74",
+              "on-primary-fixed": "#002203",
+              "surface-container-low": "#f3f3f8"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f9f9fe;
+        }
+        .editorial-shadow {
+            box-shadow: 0 8px 24px rgba(26, 28, 31, 0.06);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 w-full z-50 flex items-center justify-between px-6 h-16 bg-gradient-to-b from-[#f9f9fe] to-[#f3f3f8]">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-container-high overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="close-up portrait of a smiling young professional man with soft studio lighting and a clean neutral background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBsdigZftrtkLATk256C2Ka1m4M6GWGO_Quqlay3N7eWdVvlQawUZkzvXwee4h31df-Fl2ko1C1EoDfER8I-jjHVEvj0QQevhirHcA_fL-T9g1A2MCOA9bPc6zJ3DFw-j1niBOrKDRpp6aNUc64JJ72mfl97jFypZRTuUS5QckTrjB-zaKnMHnQbkELumR2yiXqN1mudRex0yEIQwUQs5dxBdtXCxM9AfwPG9qF93b4jKYPPJr2_Ni0mPea9jNozizdNU2YqV5urdk2"/>
+</div>
+<h1 class="font-manrope font-black text-green-700 tracking-tight text-xl">Smart Food Weight Tracker</h1>
+</div>
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-green-600 hover:opacity-80 transition-opacity active:scale-95 transition-transform duration-200">notifications</button>
+</div>
+</header>
+<main class="pt-24 pb-32 px-6 max-w-2xl mx-auto">
+<!-- Hero Section -->
+<section class="mb-10">
+<h2 class="font-headline font-bold text-3xl text-on-surface mb-2 ml-4">The Journal</h2>
+<p class="font-body text-on-surface-variant text-sm ml-4">Tracking your nutritional momentum</p>
+</section>
+<!-- Filter Chips -->
+<div class="flex gap-3 mb-12 overflow-x-auto pb-2 scrollbar-hide">
+<button class="px-6 py-2 rounded-full bg-primary-container text-on-primary-container font-label text-sm font-medium editorial-shadow active:scale-95 transition-transform">Today</button>
+<button class="px-6 py-2 rounded-full bg-surface-container-high text-on-surface-variant font-label text-sm font-medium hover:bg-surface-container-highest transition-colors">Week</button>
+<button class="px-6 py-2 rounded-full bg-surface-container-high text-on-surface-variant font-label text-sm font-medium hover:bg-surface-container-highest transition-colors">Month</button>
+</div>
+<!-- Timeline Container -->
+<div class="relative">
+<!-- Vertical Line Path -->
+<div class="absolute left-[31px] top-4 bottom-4 w-px bg-outline-variant opacity-30"></div>
+<!-- Timeline Entry 1 -->
+<div class="relative flex gap-6 mb-10 group">
+<!-- Timeline Indicator -->
+<div class="relative z-10 flex flex-col items-center">
+<div class="w-16 h-16 rounded-xl bg-surface-container-lowest editorial-shadow overflow-hidden p-1 border border-white/50">
+<img class="w-full h-full object-cover rounded-lg" data-alt="gourmet plated grilled salmon with roasted asparagus and lemon slices on a dark ceramic plate with high-end food styling" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD580W4Bmda6S6MeDQqZpEFP79HZB4ZBvSGwi-qIhG8a8-l6_FALK8CSroeb-gBZbIyeqCkeTXMSPZRH2MV4TtGGGf6VW60mKqUD0XOQiiGm4Hhy7cg1FrcjNxs4PiNyHJFU8GGLUzLoIh8_kdKJOiN0KpfYHOtRBCe1izlsMdSwMPakGV-esJiY48RZoTnlEJVbhQxmBKFc_9_aP1VXdghbi-PDE4y7nRHafBR768suNBeUpQCrj2CExpyeTVLStuPCjGcolhtSZbU"/>
+</div>
+<div class="absolute -left-1 top-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-primary"></div>
+</div>
+<!-- Content Card -->
+<div class="flex-1 bg-surface-container-lowest rounded-xl p-5 editorial-shadow transition-transform group-active:scale-[0.98] border border-white/20">
+<div class="flex justify-between items-start mb-1">
+<h3 class="font-headline font-bold text-on-surface">Grilled Salmon</h3>
+<span class="font-headline font-extrabold text-primary">250g</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">schedule</span>
+<span class="font-body text-xs font-medium">12:45 PM</span>
+</div>
+<div class="mt-3 flex gap-2">
+<span class="px-2 py-0.5 rounded bg-secondary-fixed text-on-secondary-fixed text-[10px] font-bold uppercase tracking-wider">Lunch</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-low text-on-surface-variant text-[10px] font-bold uppercase tracking-wider">High Protein</span>
+</div>
+</div>
+</div>
+<!-- Timeline Entry 2 -->
+<div class="relative flex gap-6 mb-10 group">
+<!-- Timeline Indicator -->
+<div class="relative z-10 flex flex-col items-center">
+<div class="w-16 h-16 rounded-xl bg-surface-container-lowest editorial-shadow overflow-hidden p-1 border border-white/50">
+<img class="w-full h-full object-cover rounded-lg" data-alt="vibrant healthy bowl with quinoa, avocado, chickpeas and fresh greens topped with sesame seeds in a minimalist ceramic bowl" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDdes6ADHOuQjZiZd8xr7zIe9AjzwVdT0PCJhdFHzX1oS-C54pqoO9EQqJqSYdgmvSple0vUUW2WGQ19Dbu5B-FBD5R7zlE2u7QI9oNo8e3YYsp-1Ogb8Q95rW4l0zsSyZkVoO4Z6NIBzS0b8je6LGoT9T4u2-HcAUafMTtv3dQmlM5A4ZcP-l3U0_W4ARf8bbRgP2_zqEYed4HHCa5ls2_QI2moclyCaah0OVG1fXE-YniMjo255UZLesaIxdq4vvkRCw1vfM9KEKo"/>
+</div>
+<div class="absolute -left-1 top-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-outline-variant"></div>
+</div>
+<!-- Content Card -->
+<div class="flex-1 bg-surface-container-lowest rounded-xl p-5 editorial-shadow transition-transform group-active:scale-[0.98] border border-white/20">
+<div class="flex justify-between items-start mb-1">
+<h3 class="font-headline font-bold text-on-surface">Buddha Bowl</h3>
+<span class="font-headline font-extrabold text-primary">420g</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">schedule</span>
+<span class="font-body text-xs font-medium">08:15 AM</span>
+</div>
+<div class="mt-3 flex gap-2">
+<span class="px-2 py-0.5 rounded bg-secondary-fixed text-on-secondary-fixed text-[10px] font-bold uppercase tracking-wider">Breakfast</span>
+</div>
+</div>
+</div>
+<!-- Timeline Entry 3 -->
+<div class="relative flex gap-6 mb-10 group">
+<!-- Timeline Indicator -->
+<div class="relative z-10 flex flex-col items-center">
+<div class="w-16 h-16 rounded-xl bg-surface-container-lowest editorial-shadow overflow-hidden p-1 border border-white/50">
+<img class="w-full h-full object-cover rounded-lg" data-alt="close-up of a glazed chocolate donut with sprinkles on a minimalist white surface with soft directional lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBIxqJIm8Fh15rSSqaAbufCXtsJBDwmvWglQ3Oii376P670BPeWFTAot6RQD64X2-XoMt1E7-0oW7zEwD4yiD1CZ57n5Lb2TT4mZzWRIUdS4CNlkFrwY2nwhgaBoYIn6VjsPPvaUuoLymmBHoWdh0ZSF6wVev0szwAw242-9V2S9Ov88frT194op60ao9gepgf8Rrq9_Z9GDo8pREgOOkMF4QeCH3uvNRFfestL_6vlUlYGsGaF2M_F95vHuwWv8Jl2OIZ8oFmKwTEQ"/>
+</div>
+<div class="absolute -left-1 top-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-outline-variant"></div>
+</div>
+<!-- Content Card -->
+<div class="flex-1 bg-surface-container-lowest rounded-xl p-5 editorial-shadow transition-transform group-active:scale-[0.98] border border-white/20">
+<div class="flex justify-between items-start mb-1">
+<h3 class="font-headline font-bold text-on-surface">Sweet Treat</h3>
+<span class="font-headline font-extrabold text-primary">85g</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">schedule</span>
+<span class="font-body text-xs font-medium">10:30 PM (Yesterday)</span>
+</div>
+<div class="mt-3 flex gap-2">
+<span class="px-2 py-0.5 rounded bg-tertiary-fixed text-on-tertiary-fixed text-[10px] font-bold uppercase tracking-wider">Snack</span>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- FAB for Adding Entry (Task Specific) -->
+<button class="fixed bottom-24 right-6 w-14 h-14 rounded-full bg-gradient-to-br from-[#006e1a] to-[#20c93d] text-white flex items-center justify-center editorial-shadow z-40 active:scale-90 transition-transform">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0; font-size: 28px;">add</span>
+</button>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-4 pt-2 bg-white/70 backdrop-blur-xl rounded-t-[1.5rem] shadow-[0_-8px_24px_rgba(26,28,31,0.06)]">
+<a class="flex flex-col items-center justify-center text-[#3d4a3c] opacity-70 hover:bg-green-50 transition-colors py-1 px-4" href="#">
+<span class="material-symbols-outlined">grid_view</span>
+<span class="font-inter text-[10px] font-medium tracking-wide">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-green-100 text-green-800 rounded-full py-1 px-4" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">history</span>
+<span class="font-inter text-[10px] font-medium tracking-wide">History</span>
+</a>
+<a class="bg-gradient-to-br from-[#006e1a] to-[#20c93d] text-white scale-110 -translate-y-4 shadow-lg w-12 h-12 flex items-center justify-center rounded-full" href="#">
+<span class="material-symbols-outlined">add_circle</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#3d4a3c] opacity-70 hover:bg-green-50 transition-colors py-1 px-4" href="#">
+<span class="material-symbols-outlined">analytics</span>
+<span class="font-inter text-[10px] font-medium tracking-wide">Insights</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#3d4a3c] opacity-70 hover:bg-green-50 transition-colors py-1 px-4" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-inter text-[10px] font-medium tracking-wide">Profile</span>
+</a>
+</nav>
+</body></html>

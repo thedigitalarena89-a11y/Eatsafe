@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Smart Food Weight Tracker - Result</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Manrope:wght@700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-surface-variant": "#3d4a3c",
+              "secondary": "#4c4aca",
+              "on-error-container": "#93000a",
+              "on-secondary-fixed": "#0c006a",
+              "inverse-primary": "#46e354",
+              "on-error": "#ffffff",
+              "on-tertiary-fixed-variant": "#7e2a27",
+              "tertiary-fixed": "#ffdad7",
+              "secondary-fixed": "#e2dfff",
+              "primary-fixed-dim": "#46e354",
+              "secondary-fixed-dim": "#c2c1ff",
+              "background": "#f9f9fe",
+              "primary": "#006e1a",
+              "on-tertiary-fixed": "#410004",
+              "surface-container-lowest": "#ffffff",
+              "surface-variant": "#e2e2e7",
+              "surface-container-highest": "#e2e2e7",
+              "surface": "#f9f9fe",
+              "secondary-container": "#6664e4",
+              "tertiary-fixed-dim": "#ffb3ad",
+              "on-secondary-fixed-variant": "#3631b4",
+              "on-surface": "#1a1c1f",
+              "on-tertiary": "#ffffff",
+              "surface-tint": "#006e1a",
+              "surface-container": "#ededf2",
+              "on-primary-fixed-variant": "#005311",
+              "inverse-on-surface": "#f0f0f5",
+              "surface-dim": "#d9dade",
+              "on-primary-container": "#004d0f",
+              "surface-bright": "#f9f9fe",
+              "on-secondary-container": "#fffbff",
+              "tertiary": "#9c413d",
+              "error-container": "#ffdad6",
+              "on-background": "#1a1c1f",
+              "tertiary-container": "#ff8e86",
+              "on-tertiary-container": "#772523",
+              "on-secondary": "#ffffff",
+              "on-primary": "#ffffff",
+              "primary-container": "#20c93d",
+              "outline-variant": "#bccbb8",
+              "inverse-surface": "#2e3034",
+              "outline": "#6d7b6b",
+              "surface-container-high": "#e8e8ed",
+              "error": "#ba1a1a",
+              "primary-fixed": "#71ff74",
+              "on-primary-fixed": "#002203",
+              "surface-container-low": "#f3f3f8"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "1.5rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .weight-arc-bg {
+        background: radial-gradient(circle at 50% 120%, rgba(32, 201, 61, 0.15) 0%, transparent 70%);
+      }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface font-body text-on-surface-variant antialiased selection:bg-primary-container">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 w-full z-50 flex items-center justify-between px-6 h-16 bg-gradient-to-b from-[#f9f9fe] to-[#f3f3f8]">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-container overflow-hidden">
+<img alt="User profile photo" class="w-full h-full object-cover" data-alt="Close-up studio portrait of a smiling young man with soft lighting and neutral background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHBFaDqCxeiG6tv24eDJZlonMZFfkfW2SXWnRVIuQSZvF4XYLj5Et3_GZis3dlU17TAwYzFtW1gdNzh-g82RUp_zvDXrOAXzq8xtKWKtGrygiDB1MqAr3TCHje9A7ZCxoS6BwKA2hO__z19agHCZH6KMi36REBs1uRpGVHnfYY8gm0iUkATh0eDW9rNF9pvOAChHMZ2yHgPB7PluJQ9yC45wvHPSOyuwDfxot5H-C_eE0ShsW8sbYfjA5NKldIJuBTD5VgZWnfRUhA"/>
+</div>
+</div>
+<h1 class="font-manrope font-black text-green-700 tracking-tight text-xl">Smart Food Weight Tracker</h1>
+<button class="text-[#3d4a3c] hover:opacity-80 transition-opacity">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+</header>
+<main class="pt-20 pb-32 px-6 max-w-md mx-auto min-h-screen">
+<!-- Result Visualization Section -->
+<section class="mb-8 relative">
+<div class="relative overflow-hidden rounded-xl bg-surface-container-lowest shadow-[0_8px_24px_rgba(26,28,31,0.06)] aspect-square group">
+<img alt="Scanned food" class="w-full h-full object-cover" data-alt="A fresh red apple sitting on a modern digital kitchen scale with a clear display, bright kitchen setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBGBvmaf2Us7q-LDYKWuWZ-U8cmDOPH1Xb4Z-qu536_lKlhe9f5oWS-DFd4MmpReLZvbrmabAM2Mqu0Mzhi8CAKy_g9NhhyyqRTC4s7W6ZoIt3gQNQqDk-Az8aq_wfdjBwEj3724-_P8NszNrM-jim6q1Mlv_tMwKe9zPMUnYuf1l14kqkGrhCcCNRF9xLB5WuLKFUJIFZMn2cYlRr0HQMDswqm3FUpgQjj-cVaSDgJcwavrA_vxSoRHXBWYHpn9Xyu1zK02RlT2TV3"/>
+<!-- Confidence Badge Overlay -->
+<div class="absolute top-4 right-4 bg-white/70 backdrop-blur-xl px-4 py-2 rounded-full flex items-center gap-2 border border-white/50">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span class="font-label text-xs font-bold text-on-surface">92% Confidence</span>
+</div>
+<!-- Analysis Grid Overlay (Visual fluff) -->
+<div class="absolute inset-0 pointer-events-none border-[1.5rem] border-transparent">
+<div class="w-full h-full border border-primary/20 rounded-lg flex items-center justify-center">
+<div class="w-1/2 h-1/2 border border-primary/40 rounded-full"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Form Section -->
+<section class="space-y-4">
+<!-- Food Name -->
+<div class="group">
+<label class="block font-label text-[10px] font-medium tracking-wide uppercase text-outline px-4 mb-1">Food Name</label>
+<div class="bg-surface-container-low rounded-xl p-4 transition-all focus-within:bg-surface-container-lowest focus-within:ring-2 focus-within:ring-primary/40">
+<input class="w-full bg-transparent border-none p-0 focus:ring-0 font-manrope font-bold text-lg text-on-surface" placeholder="What is this?" type="text" value="Apple"/>
+</div>
+</div>
+<!-- Weight -->
+<div class="group">
+<label class="block font-label text-[10px] font-medium tracking-wide uppercase text-outline px-4 mb-1">Measured Weight</label>
+<div class="bg-surface-container-low rounded-xl p-4 transition-all focus-within:bg-surface-container-lowest focus-within:ring-2 focus-within:ring-primary/40 flex items-end gap-2">
+<input class="w-24 bg-transparent border-none p-0 focus:ring-0 font-manrope font-black text-4xl text-primary leading-none" placeholder="0" type="text" value="182"/>
+<span class="font-manrope font-bold text-xl text-outline-variant pb-1">g</span>
+</div>
+</div>
+<!-- Date/Time Selection -->
+<div class="flex gap-4">
+<div class="flex-1">
+<label class="block font-label text-[10px] font-medium tracking-wide uppercase text-outline px-4 mb-1">Date</label>
+<div class="bg-surface-container-low rounded-xl p-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-sm text-outline">calendar_today</span>
+<input class="w-full bg-transparent border-none p-0 focus:ring-0 font-body text-sm text-on-surface-variant" readonly="" type="text" value="Today, Oct 24"/>
+</div>
+</div>
+<div class="flex-1">
+<label class="block font-label text-[10px] font-medium tracking-wide uppercase text-outline px-4 mb-1">Time</label>
+<div class="bg-surface-container-low rounded-xl p-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-sm text-outline">schedule</span>
+<input class="w-full bg-transparent border-none p-0 focus:ring-0 font-body text-sm text-on-surface-variant" readonly="" type="text" value="12:45 PM"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Secondary Actions -->
+<div class="mt-8 flex justify-between items-center px-2">
+<button class="flex items-center gap-2 text-on-surface-variant font-medium text-sm hover:opacity-70 transition-opacity">
+<span class="material-symbols-outlined">edit</span>
+<span>Manual Entry</span>
+</button>
+<button class="flex items-center gap-2 text-error font-medium text-sm hover:opacity-70 transition-opacity">
+<span class="material-symbols-outlined">refresh</span>
+<span>Retake Photo</span>
+</button>
+</div>
+</main>
+<!-- Fixed Bottom Actions Container -->
+<div class="fixed bottom-0 left-0 w-full p-6 pb-10 bg-gradient-to-t from-surface via-surface to-transparent pointer-events-none">
+<div class="max-w-md mx-auto pointer-events-auto">
+<button class="w-full bg-gradient-to-br from-primary to-primary-container text-white font-manrope font-bold py-5 rounded-full shadow-[0_8px_24px_rgba(0,110,26,0.25)] flex items-center justify-center gap-2 active:scale-95 transition-transform">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                Quick Save Entry
+            </button>
+</div>
+</div>
+<!-- Navigation Shell (BottomNavBar) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-4 pt-2 bg-white/70 backdrop-blur-xl rounded-t-[1.5rem] shadow-[0_-8px_24px_rgba(26,28,31,0.06)] md:hidden">
+<a class="flex flex-col items-center justify-center text-[#3d4a3c] opacity-70 hover:bg-green-50 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="grid_view">grid_view</span>
+<span class="font-inter text-[10px] font-medium tracking-wide">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#3d4a3c] opacity-70 hover:bg-green-50 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="history">history</span>
+<span class="font-inter text-[10px] font-medium tracking-wide">History</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-gradient-to-br from-[#006e1a] to-[#20c93d] text-white scale-110 -translate-y-4 shadow-lg rounded-full w-14 h-14" href="#">
+<span class="material-symbols-outlined text-3xl" data-icon="add_circle">add_circle</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#3d4a3c] opacity-70 hover:bg-green-50 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+<span class="font-inter text-[10px] font-medium tracking-wide">Insights</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#3d4a3c] opacity-70 hover:bg-green-50 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-inter text-[10px] font-medium tracking-wide">Profile</span>
+</a>
+</nav>
+</body></html>

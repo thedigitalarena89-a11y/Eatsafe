@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Scan Food - Smart Food Weight Tracker</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "on-surface-variant": "#3d4a3c",
+            "secondary": "#4c4aca",
+            "on-error-container": "#93000a",
+            "on-secondary-fixed": "#0c006a",
+            "inverse-primary": "#46e354",
+            "on-error": "#ffffff",
+            "on-tertiary-fixed-variant": "#7e2a27",
+            "tertiary-fixed": "#ffdad7",
+            "secondary-fixed": "#e2dfff",
+            "primary-fixed-dim": "#46e354",
+            "secondary-fixed-dim": "#c2c1ff",
+            "background": "#f9f9fe",
+            "primary": "#006e1a",
+            "on-tertiary-fixed": "#410004",
+            "surface-container-lowest": "#ffffff",
+            "surface-variant": "#e2e2e7",
+            "surface-container-highest": "#e2e2e7",
+            "surface": "#f9f9fe",
+            "secondary-container": "#6664e4",
+            "tertiary-fixed-dim": "#ffb3ad",
+            "on-secondary-fixed-variant": "#3631b4",
+            "on-surface": "#1a1c1f",
+            "on-tertiary": "#ffffff",
+            "surface-tint": "#006e1a",
+            "surface-container": "#ededf2",
+            "on-primary-fixed-variant": "#005311",
+            "inverse-on-surface": "#f0f0f5",
+            "surface-dim": "#d9dade",
+            "on-primary-container": "#004d0f",
+            "surface-bright": "#f9f9fe",
+            "on-secondary-container": "#fffbff",
+            "tertiary": "#9c413d",
+            "error-container": "#ffdad6",
+            "on-background": "#1a1c1f",
+            "tertiary-container": "#ff8e86",
+            "on-tertiary-container": "#772523",
+            "on-secondary": "#ffffff",
+            "on-primary": "#ffffff",
+            "primary-container": "#20c93d",
+            "outline-variant": "#bccbb8",
+            "inverse-surface": "#2e3034",
+            "outline": "#6d7b6b",
+            "surface-container-high": "#e8e8ed",
+            "error": "#ba1a1a",
+            "primary-fixed": "#71ff74",
+            "on-primary-fixed": "#002203",
+            "surface-container-low": "#f3f3f8"
+          },
+          fontFamily: {
+            "headline": ["Manrope"],
+            "body": ["Inter"],
+            "label": ["Inter"]
+          },
+          borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    .camera-overlay {
+      background: radial-gradient(circle, transparent 150px, rgba(26, 28, 31, 0.7) 150px);
+    }
+    .scanner-mask {
+      box-shadow: 0 0 0 9999px rgba(26, 28, 31, 0.7);
+    }
+    body {
+      background-color: #1a1c1f; /* Dark background for camera feel */
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-body text-on-background antialiased overflow-hidden">
+<!-- Top Navigation Shell (Contextual Back Version) -->
+<header class="fixed top-0 left-0 w-full z-50 flex items-center justify-between px-6 h-16 bg-gradient-to-b from-black/60 to-transparent">
+<button class="flex items-center justify-center w-10 h-10 rounded-full bg-white/10 backdrop-blur-md text-white hover:opacity-80 transition-opacity active:scale-95 duration-200">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h1 class="font-headline font-bold text-xl text-white tracking-tight">Scan Food</h1>
+<button class="flex items-center justify-center w-10 h-10 rounded-full bg-white/10 backdrop-blur-md text-white hover:opacity-80 transition-opacity active:scale-95 duration-200">
+<span class="material-symbols-outlined">flash_on</span>
+</button>
+</header>
+<!-- Main Camera Viewport -->
+<main class="relative h-screen w-full flex flex-col items-center justify-center">
+<!-- Camera Preview Simulated Background -->
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover" data-alt="Close up view of a fresh green salad with avocado and seeds on a kitchen counter, seen through a camera lens" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBE2ArjoqYYJyp8Doa7pYpc-6RM3YBl_OJD0O3xMKbl_vIp8Xy00s49NwrvY2AjKxSe_l7XYbmXZfLk1Mck2m1eq9r60DtdXmDhOs4yl-Voo7FwIgli6SDofjbsiRp3vSwRFBSnMSe2HNDfP7gMhjcR4sXrXKe5bQgdbIgFBolq6nMmTwwO6BFGzG_ZC_gJg1msCo2JaZbFyD5TGCvW1W7AmhbuPIXXOiFkNyukBqdX_6BEIRl9Np6NCMU54wXD0UhynwQSQAujTY9C"/>
+</div>
+<!-- Scanning Overlay Elements -->
+<div class="absolute inset-0 z-10 flex flex-col items-center justify-center">
+<!-- Dark Mask with Cutout -->
+<div class="relative w-72 h-72">
+<div class="absolute inset-0 rounded-[2.5rem] border-2 border-primary-container scanner-mask ring-[2000px] ring-[#1a1c1f]/70"></div>
+<!-- Animated Scanner Line (Simulated) -->
+<div class="absolute top-0 left-1/2 -translate-x-1/2 w-[90%] h-0.5 bg-primary-container shadow-[0_0_15px_#20c93d] opacity-80 mt-8"></div>
+<!-- Corner Brackets -->
+<div class="absolute -top-1 -left-1 w-8 h-8 border-t-4 border-l-4 border-primary-container rounded-tl-2xl"></div>
+<div class="absolute -top-1 -right-1 w-8 h-8 border-t-4 border-r-4 border-primary-container rounded-tr-2xl"></div>
+<div class="absolute -bottom-1 -left-1 w-8 h-8 border-b-4 border-l-4 border-primary-container rounded-bl-2xl"></div>
+<div class="absolute -bottom-1 -right-1 w-8 h-8 border-b-4 border-r-4 border-primary-container rounded-br-2xl"></div>
+</div>
+<!-- Feedback Text -->
+<div class="mt-8 bg-black/40 backdrop-blur-md px-6 py-2 rounded-full border border-white/10">
+<p class="text-white font-medium text-sm">Align food within the frame</p>
+</div>
+</div>
+<!-- Bottom Controls Area -->
+<div class="absolute bottom-0 left-0 w-full z-20 pb-12 pt-20 px-8 bg-gradient-to-t from-black/80 via-black/40 to-transparent flex flex-col items-center">
+<!-- Quick Recognition Chips (Contextual) -->
+<div class="flex gap-3 mb-10 overflow-x-auto w-full no-scrollbar justify-center">
+<div class="flex items-center gap-2 px-4 py-2 bg-primary-container text-on-primary-container rounded-full text-xs font-semibold">
+<span class="material-symbols-outlined text-sm">restaurant</span>
+<span>Detecting Fruit...</span>
+</div>
+<div class="flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-md text-white rounded-full text-xs font-medium">
+<span class="material-symbols-outlined text-sm">scale</span>
+<span>Calibrate Scale</span>
+</div>
+</div>
+<!-- Main Action Cluster -->
+<div class="flex items-center justify-between w-full max-w-sm">
+<!-- Upload Button -->
+<button class="group flex flex-col items-center gap-2">
+<div class="w-14 h-14 rounded-full bg-white/10 backdrop-blur-lg border border-white/20 flex items-center justify-center text-white group-active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-2xl">image</span>
+</div>
+<span class="text-[10px] uppercase tracking-widest font-bold text-white/70">Upload</span>
+</button>
+<!-- Capture Button (FAB Inspired) -->
+<button class="relative group">
+<div class="absolute inset-0 bg-white/20 rounded-full scale-125 group-active:scale-150 transition-transform duration-300"></div>
+<div class="relative w-20 h-20 rounded-full bg-white border-4 border-white/30 flex items-center justify-center shadow-2xl group-active:scale-95 transition-transform duration-200">
+<div class="w-16 h-16 rounded-full border-2 border-on-background/10"></div>
+</div>
+</button>
+<!-- History/Settings Button -->
+<button class="group flex flex-col items-center gap-2">
+<div class="w-14 h-14 rounded-full bg-white/10 backdrop-blur-lg border border-white/20 flex items-center justify-center text-white group-active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-2xl">history</span>
+</div>
+<span class="text-[10px] uppercase tracking-widest font-bold text-white/70">Recent</span>
+</button>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation Shell (Mapped from JSON) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-4 pt-2 bg-white/70 dark:bg-slate-900/70 backdrop-blur-xl rounded-t-[1.5rem] shadow-[0_-8px_24px_rgba(26,28,31,0.06)] md:hidden">
+<a class="flex flex-col items-center justify-center text-[#3d4a3c] dark:text-slate-400 opacity-70 hover:bg-green-50 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined">grid_view</span>
+<span class="font-inter text-[10px] font-medium tracking-wide">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#3d4a3c] dark:text-slate-400 opacity-70 hover:bg-green-50 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined">history</span>
+<span class="font-inter text-[10px] font-medium tracking-wide">History</span>
+</a>
+<!-- Active Scanner Tab -->
+<a class="flex flex-col items-center justify-center bg-green-100 dark:bg-green-900/40 text-green-800 dark:text-green-200 rounded-full py-1 px-4 scale-110 -translate-y-4 shadow-lg bg-gradient-to-br from-[#006e1a] to-[#20c93d] !text-white" href="#">
+<span class="material-symbols-outlined">add_circle</span>
+<span class="font-inter text-[10px] font-medium tracking-wide">Scan</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#3d4a3c] dark:text-slate-400 opacity-70 hover:bg-green-50 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined">analytics</span>
+<span class="font-inter text-[10px] font-medium tracking-wide">Insights</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#3d4a3c] dark:text-slate-400 opacity-70 hover:bg-green-50 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-inter text-[10px] font-medium tracking-wide">Profile</span>
+</a>
+</nav>
+<!-- Desktop TopAppBar (Mapped from JSON) -->
+<nav class="hidden md:flex fixed top-0 left-0 w-full z-50 items-center justify-between px-10 h-16 bg-gradient-to-b from-[#f9f9fe] to-[#f3f3f8] dark:from-slate-950 dark:to-slate-900">
+<div class="flex items-center gap-4">
+<span class="font-manrope font-black text-green-700 dark:text-green-400 tracking-tight text-xl">Smart Food</span>
+</div>
+<div class="flex items-center gap-8">
+<a class="font-inter text-sm font-medium text-[#3d4a3c] dark:text-slate-400 hover:opacity-80 transition-opacity" href="#">Home</a>
+<a class="font-inter text-sm font-medium text-[#3d4a3c] dark:text-slate-400 hover:opacity-80 transition-opacity" href="#">History</a>
+<a class="font-inter text-sm font-bold text-green-700 dark:text-green-400 hover:opacity-80 transition-opacity underline decoration-2 underline-offset-8" href="#">Scan</a>
+<a class="font-inter text-sm font-medium text-[#3d4a3c] dark:text-slate-400 hover:opacity-80 transition-opacity" href="#">Insights</a>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-green-600 dark:text-green-400">notifications</span>
+<div class="w-8 h-8 rounded-full overflow-hidden border-2 border-primary-container">
+<img class="w-full h-full object-cover" data-alt="User profile avatar of a smiling man in a professional setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCqI1RyLrToGZrtJ9vLgAjAVr3QQX2I56j9xv8m2pQqi-QlcJPRUSFXRxUwLTU6KtRRc5pQZWG4e1WP6_0rJJRirDPWzpDouxyUcMvj3tH5EXYd8c9WxK3_daDQZlnBp_TUJZobnwpitN64QLOwlz8R03Q3waPoXTEzIDJK9ECFn-hga-_p7LVMqDTTD0ndTAIMDmoa27Gts2UtEOk8wZkMSYgEptkJILjpim_f5U9Qp-IOHQtU1fitXhhvYFrhldF7fdBvY9-Xcgl3"/>
+</div>
+</div>
+</nav>
+</body></html>

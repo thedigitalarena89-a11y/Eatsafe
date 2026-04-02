@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Onboarding | Smart Food Weight Tracker</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-surface-variant": "#3d4a3c",
+              "secondary": "#4c4aca",
+              "on-error-container": "#93000a",
+              "on-secondary-fixed": "#0c006a",
+              "inverse-primary": "#46e354",
+              "on-error": "#ffffff",
+              "on-tertiary-fixed-variant": "#7e2a27",
+              "tertiary-fixed": "#ffdad7",
+              "secondary-fixed": "#e2dfff",
+              "primary-fixed-dim": "#46e354",
+              "secondary-fixed-dim": "#c2c1ff",
+              "background": "#f9f9fe",
+              "primary": "#006e1a",
+              "on-tertiary-fixed": "#410004",
+              "surface-container-lowest": "#ffffff",
+              "surface-variant": "#e2e2e7",
+              "surface-container-highest": "#e2e2e7",
+              "surface": "#f9f9fe",
+              "secondary-container": "#6664e4",
+              "tertiary-fixed-dim": "#ffb3ad",
+              "on-secondary-fixed-variant": "#3631b4",
+              "on-surface": "#1a1c1f",
+              "on-tertiary": "#ffffff",
+              "surface-tint": "#006e1a",
+              "surface-container": "#ededf2",
+              "on-primary-fixed-variant": "#005311",
+              "inverse-on-surface": "#f0f0f5",
+              "surface-dim": "#d9dade",
+              "on-primary-container": "#004d0f",
+              "surface-bright": "#f9f9fe",
+              "on-secondary-container": "#fffbff",
+              "tertiary": "#9c413d",
+              "error-container": "#ffdad6",
+              "on-background": "#1a1c1f",
+              "tertiary-container": "#ff8e86",
+              "on-tertiary-container": "#772523",
+              "on-secondary": "#ffffff",
+              "on-primary": "#ffffff",
+              "primary-container": "#20c93d",
+              "outline-variant": "#bccbb8",
+              "inverse-surface": "#2e3034",
+              "outline": "#6d7b6b",
+              "surface-container-high": "#e8e8ed",
+              "error": "#ba1a1a",
+              "primary-fixed": "#71ff74",
+              "on-primary-fixed": "#002203",
+              "surface-container-low": "#f3f3f8"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        .snap-x-mandatory { scroll-snap-type: x mandatory; }
+        .snap-center { scroll-snap-align: center; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background font-body text-on-surface-variant antialiased overflow-hidden">
+<!-- Top App Bar - Shell suppressed for Onboarding but placeholder logic remains -->
+<header class="fixed top-0 left-0 w-full z-50 flex items-center justify-center px-6 h-16 bg-gradient-to-b from-[#f9f9fe] to-[#f3f3f8]">
+<h1 class="font-headline font-black text-primary tracking-tight text-xl">Smart Food Weight Tracker</h1>
+</header>
+<main class="h-screen w-full flex flex-col justify-between pt-16">
+<!-- Horizontal Scrollable Onboarding Content -->
+<div class="flex-grow flex overflow-x-auto snap-x-mandatory no-scrollbar">
+<!-- Slide 1: Scan -->
+<section class="min-w-full h-full snap-center flex flex-col items-center justify-center px-10 text-center">
+<div class="w-full max-w-sm aspect-square mb-12 relative">
+<div class="absolute inset-0 bg-primary-container/20 rounded-full blur-3xl"></div>
+<img alt="Scanning Food" class="relative z-10 w-full h-full object-cover rounded-xl shadow-lg" data-alt="Modern smartphone camera interface scanning a fresh bowl of salad with digital overlay showing nutrient data and bounding boxes" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJ5FAgqkaTwWI9cLYVmfGwinYIy94x8GEVT9rT1OhIqNcRhO5YxrWoluwMy2vwIQbCwWih-O6oIBsNP_JIbFLQbp--KzGqr8pzSKz-QA_RiKcIaLSuBQRAPBcMGLwrlcXAnCrwOptKxSleEMdGxkGFjnHG5D7iAlbRM-Zu8Z-egW11O4RGy2FoMJKhfUNlEtFLmxNK0Tvm6mMj9IwDQnBF9gPObNPYSgwo2FyFwKLFQtFq_87mgtDl8Zn4NnP97K8uB2I0ZHgk04WX"/>
+<div class="absolute -bottom-4 -right-4 bg-primary text-white p-4 rounded-full shadow-xl">
+<span class="material-symbols-outlined text-3xl">photo_camera</span>
+</div>
+</div>
+<h2 class="font-headline font-bold text-on-surface text-2xl mb-4 leading-tight">Scan your food instantly</h2>
+<p class="text-on-surface-variant text-body-md opacity-80 max-w-[260px]">Point your camera at your meal and let AI do the hard work for you.</p>
+</section>
+<!-- Slide 2: Detect -->
+<section class="min-w-full h-full snap-center flex flex-col items-center justify-center px-10 text-center">
+<div class="w-full max-w-sm aspect-square mb-12 relative">
+<div class="absolute inset-0 bg-secondary-fixed/30 rounded-full blur-3xl"></div>
+<img alt="Weight Detection" class="relative z-10 w-full h-full object-cover rounded-xl shadow-lg" data-alt="Digital kitchen scale with a fresh apple on top showing a sleek minimalist blue led readout of weight in grams" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJbubSm-bU_0kx4fxEdu1fwzrEWo_TlEQ8LDZ8AH81BBWtByKnRQ4ogQljWRiHYx-1aTvqaxD0VKGkpl1teDtjcP9TBgd2wOeUl0AXk9VkJ9jwdzH5SITgg4QKP8vdMJ4kQGGICW5Ze8smGU_XOupGvcDp7SKKlLzLZWOoe-jtsS-NgwvwPk7BVZY0OElIltWacFq4XQt_eSA9EOImbk-1yRGGBiVqeQuoyeTmUWr1jBW_9afbW3uc-bNQjki7HBYU8II57H6mNbtK"/>
+<div class="absolute -bottom-4 -left-4 bg-secondary text-white p-4 rounded-full shadow-xl">
+<span class="material-symbols-outlined text-3xl">scale</span>
+</div>
+</div>
+<h2 class="font-headline font-bold text-on-surface text-2xl mb-4 leading-tight">Detect weight automatically</h2>
+<p class="text-on-surface-variant text-body-md opacity-80 max-w-[260px]">Seamlessly sync with your smart scale for precision logging without typing.</p>
+</section>
+<!-- Slide 3: Track -->
+<section class="min-w-full h-full snap-center flex flex-col items-center justify-center px-10 text-center">
+<div class="w-full max-w-sm aspect-square mb-12 relative">
+<div class="absolute inset-0 bg-primary-fixed-dim/20 rounded-full blur-3xl"></div>
+<img alt="Timeline Track" class="relative z-10 w-full h-full object-cover rounded-xl shadow-lg" data-alt="Close up of a minimalist calendar and clock on a clean white desk with soft natural window lighting and a green plant" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_nZT2LdDWsVzJD1T9GJAnadkh2NonsexH8lUzoHileXvUXDusQKXqjvx3dtS9k6f2DwqhHU-qD6stVN7xCg02NNMcKUZDDqbLO7QxRuen8LSQYVrx1Jey0GHu79F9oMWQsFBpmaFRO1y0i1x8uD9b3Gjs13rgpSHVdiSwA-W4rKtsEodOrCfe0uuPPMUJKauhG4U1jyJ_HDMSX11-a_pibSPnTudeAEgyHiBiMazkndKKGbT5TD-pHA2L7BUdfjb7JXAr0QSZgEGu"/>
+<div class="absolute -top-4 -right-4 bg-primary-container text-on-primary-container p-4 rounded-full shadow-xl">
+<span class="material-symbols-outlined text-3xl">calendar_today</span>
+</div>
+</div>
+<h2 class="font-headline font-bold text-on-surface text-2xl mb-4 leading-tight">Track daily usage</h2>
+<p class="text-on-surface-variant text-body-md opacity-80 max-w-[260px]">Keep a chronological history of every calorie and nutrient you consume.</p>
+</section>
+<!-- Slide 4: Save -->
+<section class="min-w-full h-full snap-center flex flex-col items-center justify-center px-10 text-center">
+<div class="w-full max-w-sm aspect-square mb-12 relative">
+<div class="absolute inset-0 bg-surface-container-high rounded-full blur-3xl"></div>
+<img alt="Save Data" class="relative z-10 w-full h-full object-cover rounded-xl shadow-lg" data-alt="Abstract visualization of data flowing into a digital cloud with soft green and white hues and clean geometric shapes" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAqz4XW7wtQYIxqWtGpAHQnfRCEXkHoVx08IoWdBclYGvNTLYLHQd0DwTg3GryA5xPS0oE9OqV7xntigQdFROJ3tAY8HSb072fH3u-b_KI_sz614JkzEv88Bcf8hgBgdGwZxr_mXqMTOGW4ju6c6KlRIjnGnMJDKJHlnXF9asESjmTXHLJ_iVN36d-cVRz8cb1mwcZmz6npLOYOja2sF1bN9YhSRK4WCbOlO_AoisyJmOXYU0CuPNLHJgE9-6hpKrliJWTxgTRl8eUY"/>
+<div class="absolute -bottom-4 right-1/2 translate-x-1/2 bg-inverse-surface text-inverse-on-surface p-4 rounded-full shadow-xl">
+<span class="material-symbols-outlined text-3xl">cloud_done</span>
+</div>
+</div>
+<h2 class="font-headline font-bold text-on-surface text-2xl mb-4 leading-tight">Save your food data</h2>
+<p class="text-on-surface-variant text-body-md opacity-80 max-w-[260px]">Your personal library of favorite meals and custom ingredients, stored forever.</p>
+</section>
+<!-- Slide 5: Insights -->
+<section class="min-w-full h-full snap-center flex flex-col items-center justify-center px-10 text-center">
+<div class="w-full max-w-sm aspect-square mb-12 relative">
+<div class="absolute inset-0 bg-tertiary-fixed/30 rounded-full blur-3xl"></div>
+<img alt="Insights" class="relative z-10 w-full h-full object-cover rounded-xl shadow-lg" data-alt="Sleek analytical dashboard on a tablet showing colorful growth charts and health metrics on a clean white background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_Q-ySCyj3SLJyaVr3y-h3xJ_yxKJ0Kg-5TEfR21pvbnlOItmZtD8YqnQdciqPzJIBEVM_tpHHQVvb_95w3jU-_db6LtYNdj4rSCWVAsSv7AkMDbZ7FZh5Y6moE8dDRGDnEU54BKpZTONI094aPyzNFA-jHXG9AzjtTlHu_LZzP8FfdAg3_D65H0WsS-iGjRNXtUsESVgGdkyIgjUvjxQk2dx3BE10BBUgQ1cQHi7pH1AzZ_6B4XcBf7SAz5BdE9Ztd6CPmyqUmiYY"/>
+<div class="absolute top-1/2 -right-4 -translate-y-1/2 bg-tertiary text-on-tertiary p-4 rounded-full shadow-xl">
+<span class="material-symbols-outlined text-3xl">trending_up</span>
+</div>
+</div>
+<h2 class="font-headline font-bold text-on-surface text-2xl mb-4 leading-tight">Stay consistent with insights</h2>
+<p class="text-on-surface-variant text-body-md opacity-80 max-w-[260px]">Get personalized feedback and trends to help you reach your health goals faster.</p>
+</section>
+</div>
+<!-- Bottom Controls -->
+<div class="w-full px-6 pb-12 pt-4">
+<!-- Pagination Dots -->
+<div class="flex justify-center gap-2 mb-10">
+<div class="w-2 h-2 rounded-full bg-primary"></div>
+<div class="w-2 h-2 rounded-full bg-outline-variant/40"></div>
+<div class="w-2 h-2 rounded-full bg-outline-variant/40"></div>
+<div class="w-2 h-2 rounded-full bg-outline-variant/40"></div>
+<div class="w-2 h-2 rounded-full bg-outline-variant/40"></div>
+</div>
+<!-- Action Buttons -->
+<div class="flex flex-col gap-4 max-w-sm mx-auto">
+<button class="w-full py-4 bg-gradient-to-br from-primary to-primary-container text-on-primary font-headline font-bold rounded-full shadow-lg hover:opacity-90 active:scale-95 transition-all">
+                    Register
+                </button>
+<button class="w-full py-4 bg-transparent border-2 border-primary text-primary font-headline font-bold rounded-full hover:bg-primary-container/10 active:scale-95 transition-all">
+                    Login
+                </button>
+</div>
+</div>
+</main>
+<!-- Navigation suppressed per logic: Onboarding is a focused journey -->
+</body></html>
