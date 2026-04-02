@@ -86,6 +86,7 @@ export default function ScanPage() {
     if (!file) return;
     setImageFile(file);
     setImageUrl(URL.createObjectURL(file));
+    stopCamera();
     setError('');
   };
 

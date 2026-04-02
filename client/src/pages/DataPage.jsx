@@ -4,12 +4,7 @@ import BottomNav from '../components/BottomNav.jsx';
 import { supabase } from '../lib/supabaseClient.js';
 import { useAuth } from '../lib/auth.jsx';
 import {
-  clearCustom,
-  clearDaily,
   ensureNotificationPermission,
-  scheduleCustom,
-  scheduleDaily,
-  showNotification
 } from '../lib/notifications.js';
 
 const FILTERS = ['today', 'weekly', 'monthly'];
@@ -34,25 +29,22 @@ export default function DataPage() {
   const [editFood, setEditFood] = useState('');
   const [editWeight, setEditWeight] = useState('');
 
-  const startDate = useMemo(() => {
+  const { startDate, endDate } = useMemo(() => {
     const now = new Date();
     const start = new Date(now);
+    let end = null;
+
     if (filter === 'today') {
       start.setHours(0, 0, 0, 0);
+      end = new Date(start);
+      end.setDate(end.getDate() + 1);
     } else if (filter === 'weekly') {
       start.setDate(start.getDate() - 7);
     } else {
       start.setMonth(start.getMonth() - 1);
     }
-    return start;
+    return { startDate: start, endDate: end };
   }, [filter]);
-
-  const endDate = useMemo(() => {
-    if (filter !== 'today') return null;
-    const end = new Date(startDate);
-    end.setDate(end.getDate() + 1);
-    return end;
-  }, [filter, startDate]);
 
   const foodOptions = useMemo(() => {
     const set = new Set();
@@ -85,33 +77,6 @@ export default function DataPage() {
     };
     fetchReminders();
   }, [user]);
-
-  useEffect(() => {
-    if (!user) return;
-    if (!dailyEnabled) { clearDaily(); return; }
-    const [hour, minute] = dailyTime.split(':').map(Number);
-    scheduleDaily({
-      hour: hour || 20, minute: minute || 0,
-      onFire: async () => {
-        const { data } = await supabase.from('food_logs').select('*').eq('user_id', user.id).gte('created_at', startDate.toISOString());
-        const message = buildDailySummary(data || [], dailyFoods);
-        showNotification('Daily Summary', message);
-      }
-    });
-  }, [dailyEnabled, dailyTime, user, startDate, dailyFoods]);
-
-  useEffect(() => {
-    if (!user) return;
-    if (!customEnabled) { clearCustom(); return; }
-    if (!customDateTime) return;
-    scheduleCustom({
-      date: new Date(customDateTime),
-      onFire: () => {
-        const suffix = customFoods.length ? ` for ${customFoods.join(', ')}` : '';
-        showNotification('Custom Reminder', `${customMessage}${suffix}`);
-      }
-    });
-  }, [customEnabled, customDateTime, customMessage, customFoods, user]);
 
   const buildDailySummary = (items, selectedFoods) => {
     if (!items || items.length === 0) return 'No food logged today.';

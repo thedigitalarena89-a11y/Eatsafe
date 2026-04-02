@@ -7,6 +7,8 @@ import ScanPage from './pages/ScanPage.jsx';
 import ResultPage from './pages/ResultPage.jsx';
 import DataPage from './pages/DataPage.jsx';
 import ProfilePage from './pages/ProfilePage.jsx';
+import ReminderManager from './components/ReminderManager.jsx';
+
 
 const router = createBrowserRouter(
   [
@@ -28,5 +30,10 @@ const router = createBrowserRouter(
 );
 
 export default function App() {
-  return <RouterProvider router={router} />;
+  return (
+    <>
+      <ReminderManager />
+      <RouterProvider router={router} />
+    </>
+  );
 }
