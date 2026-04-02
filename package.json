@@ -9,5 +9,12 @@
     "build": "npm run build --prefix client",
     "install-client": "npm install --prefix client",
     "install-server": "npm install --prefix server"
+  },
+  "dependencies": {
+    "sharp": "^0.33.3",
+    "formidable": "^3.5.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.24"
   }
 }
