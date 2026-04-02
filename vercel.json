@@ -1,6 +1,14 @@
 {
+  "version": 2,
   "buildCommand": "npm run build --prefix client",
   "outputDirectory": "client/dist",
+  "installCommand": "npm install && npm install --prefix client",
+  "functions": {
+    "api/process.js": {
+      "memory": 1024,
+      "maxDuration": 60
+    }
+  },
   "rewrites": [
     {
       "source": "/((?!api/).*)",
